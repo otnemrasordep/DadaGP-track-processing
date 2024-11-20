@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 .env
 gps_with_4/
+gps_drums/
+gps_dg-dg-b/
