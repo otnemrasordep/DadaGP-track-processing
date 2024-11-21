@@ -2117,7 +2117,7 @@ Instrument changes are not supported. Banjos are not supported.
                 print("Converting file: ", file)
                 # out_file = file.split(".")[0]
                 try:
-                    dadagp_encode(os.path.join(path,file), os.path.join(destination_folder, file + '.tokens.txt'), 'artist:drums')
+                    dadagp_encode(os.path.join(path,file), os.path.join(destination_folder, file + '.tokens.txt'), 'artist:dgdgb')
                 except:
                     continue
     else:
