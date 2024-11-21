@@ -2100,26 +2100,26 @@ Instrument changes are not supported. Banjos are not supported.
 
     elif len(sys.argv)>=1 and sys.argv[1] in ["encode_folder"]:
         
-        path = str(input("Enter folder path: "))
+        path = str(input("Enter input folder path: "))
+        destination_folder = str(input("Enter output folder path: "))
 
         # create result folder
-        # if not os.path.exists(destination_folder):
-        #     os.mkdir(destination_folder)
+        if not os.path.exists(destination_folder):
+            os.mkdir(destination_folder)
 
         if(not os.path.isdir(path)):
             print("folder path not found:", path)
             return 
+        
         # for the specific case of solo_gp
-        for files in os.walk(path):
-            # print(file)
-            for file in files[-1]:
-                if ".gp" in file:
-                    print("Converting file: ", file)
-                    # out_file = file.split(".")[0]
-                    try:
-                        dadagp_encode(os.path.join(files[0],file), os.path.join(files[0], file + '.tokens.txt'), 'artist:pink_floyd')
-                    except:
-                        continue
+        for file in os.listdir(path):
+            if ".gp" in file:
+                print("Converting file: ", file)
+                # out_file = file.split(".")[0]
+                try:
+                    dadagp_encode(os.path.join(path,file), os.path.join(destination_folder, file + '.tokens.txt'), 'artist:drums')
+                except:
+                    continue
     else:
         print(usage)
     
