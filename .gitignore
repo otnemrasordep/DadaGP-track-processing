@@ -4,3 +4,4 @@ __pycache__/
 .env
 gps_with_4/
 data/
+experiments-dgdgb-drums/
